@@ -1,0 +1,15 @@
+.idea
+app.env
+cli
+main
+config/bigquery_authen_key.json
+config/service_account_key.json
+config/config1.json
+config/config.json
+config/deploy-ci.json
+docker-compose.yaml
+docker-compose.yml
+.vscode
+cmd/queue/local
+config/prod.json
+config/uat.json
