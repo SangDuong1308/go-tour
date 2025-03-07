@@ -1,7 +1,6 @@
 package migration
 
 import (
-	"go-tour/migration/seed"
 	"gorm.io/gorm"
 )
 
@@ -12,11 +11,11 @@ type Seed struct {
 
 func All() []Seed {
 	return []Seed{
-		{
-			Name: "Create user testing",
-			Run: func(db *gorm.DB) error {
-				return seed.FakeMember(db)
-			},
-		},
+		//{
+		//	Name: "Create user testing",
+		//	Run: func(db *gorm.DB) error {
+		//		return seed.FakeMember(db)
+		//	},
+		//},
 	}
 }

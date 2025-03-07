@@ -24,7 +24,7 @@ message LoginResponse {
 }
 
 message UserInfoResponse {
-  int64 ID = 1;
+  string ID = 1;
   string UserName = 2;
   string FirstName = 3;
   string LastName = 4;

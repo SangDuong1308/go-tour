@@ -8,7 +8,6 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/pkg/errors"
 	"go-tour/internal/serializers"
-	"strconv"
 	"time"
 )
 
@@ -33,11 +32,12 @@ func ParseToken(tokenString string, publicKey string) (*serializers.UserInfo, er
 	})
 
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-		if customerID, ok1 := claims["id"]; ok1 && len(customerID.(string)) > 0 {
-			id, _ := strconv.ParseInt(customerID.(string), 10, 64)
-			return &serializers.UserInfo{
-				ID: uint(id),
-			}, nil
+		if customerID, ok1 := claims["id"]; ok1 {
+			if strID, ok2 := customerID.(string); ok2 && len(strID) > 0 {
+				return &serializers.UserInfo{
+					ID: strID,
+				}, nil
+			}
 		}
 
 		return nil, errors.New("User not found")

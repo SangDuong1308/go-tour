@@ -54,7 +54,7 @@ func (u *UserService) Profile(ctx context.Context, in *gen.EmptyRequest) (*gen.U
 	}
 
 	resp := &gen.UserInfoResponse{
-		ID:        int64(user.ID),
+		ID:        user.ID,
 		Email:     user.Email,
 		FirstName: user.FirstName,
 		LastName:  user.LastName,

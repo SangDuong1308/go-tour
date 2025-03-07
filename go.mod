@@ -26,6 +26,8 @@ require (
 	github.com/allegro/bigcache/v3 v3.1.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-sql-driver/mysql v1.9.0 // indirect
+	github.com/google/uuid v1.6.0 // indirect
+	github.com/googleapis/googleapis v0.0.0-20250307060730-df58085901d8 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect

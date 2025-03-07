@@ -1,11 +1,7 @@
 package models
 
-import (
-	"gorm.io/gorm"
-)
-
 type User struct {
-	gorm.Model
+	Base
 	FirstName  string
 	MiddleName string
 	LastName   string
@@ -16,5 +12,5 @@ type User struct {
 	Bio        string
 
 	IsActive        bool `gorm:"index:idx_is_active"`
-	IsVerifiedEmail bool
+	IsVerifiedEmail bool `gorm:"default:false"`
 }

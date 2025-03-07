@@ -14,7 +14,7 @@ func NewUser(db *gorm.DB) *User {
 	return &User{db}
 }
 
-func (u *User) FindByID(id uint) (*models.User, error) {
+func (u *User) FindByID(id string) (*models.User, error) {
 	var user models.User
 
 	if err := u.db.First(&user, id).Error; err != nil {
