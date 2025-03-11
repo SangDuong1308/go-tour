@@ -10,8 +10,8 @@ import (
 func Migration(db *gorm.DB) error {
 	if err := db.AutoMigrate(
 		&models.User{},
-		&models.CustodialPaymentAddressAction{},
-		&models.CustodialPaymentAddressLog{},
+		//&models.CustodialPaymentAddressAction{},
+		//&models.CustodialPaymentAddressLog{},
 	); err != nil {
 		return errors.Wrap(err, "db.AutoMigrate")
 	}

@@ -19,8 +19,12 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  string Token = 1;
-  string Expired = 2;
+  message Data {
+    string access_token = 1;
+    string refresh_token = 2;
+    string expired_in = 3;
+  }
+  Data data = 1;
 }
 
 message UserInfoResponse {

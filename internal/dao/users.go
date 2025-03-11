@@ -17,7 +17,7 @@ func NewUser(db *gorm.DB) *User {
 func (u *User) FindByID(id string) (*models.User, error) {
 	var user models.User
 
-	if err := u.db.First(&user, id).Error; err != nil {
+	if err := u.db.Where("id = ?", id).First(&user).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
 			return nil, nil
 		}

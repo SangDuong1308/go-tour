@@ -75,11 +75,14 @@ func (e *AuthenticationService) Auth(ctx context.Context, in *gen.LoginRequest) 
 	}
 
 	expire := time.Now().Add(60 * time.Minute)
-	token, err := must.CreateNewWithClaims(data, e.cfg.AuthenticationSecretKey, expire)
+	accessToken, err := must.CreateNewWithClaims(data, e.cfg.AuthenticationSecretKey, expire)
 
 	return &gen.LoginResponse{
-		Token:   token,
-		Expired: fmt.Sprintf("%d", expire.Unix()),
+		Data: &gen.LoginResponse_Data{
+			AccessToken:  accessToken,
+			RefreshToken: "",
+			ExpiredIn:    fmt.Sprintf("%d", expire.Unix()),
+		},
 	}, nil
 }
 

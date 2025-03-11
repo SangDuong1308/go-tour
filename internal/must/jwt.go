@@ -48,7 +48,7 @@ func ParseToken(tokenString string, publicKey string) (*serializers.UserInfo, er
 
 func CreateNewWithClaims(data *serializers.UserInfo, secretKey string, expire time.Time) (string, error) {
 	t := jwt.NewWithClaims(jwt.SigningMethodRS512, jwt.MapClaims{
-		"id":    fmt.Sprintf("%d", data.ID),
+		"id":    fmt.Sprint(data.ID),
 		"email": data.Email,
 		"exp":   expire.Unix(),
 	})
